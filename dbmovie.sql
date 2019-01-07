@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2019 at 04:11 AM
+-- Generation Time: Jan 07, 2019 at 04:29 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -97,6 +97,25 @@ INSERT INTO `tbmovie` (`id_movie`, `title`, `poster_path`, `overview`, `release_
 (1, 'Ralph Breaks the Internet', 'https://image.tmdb.org/t/p/w600_and_h900_bestv2\\/m110vLaDDOCca4hfOcS5mK5cDke.jpg', 'Six years after the events of \\\"Wreck-It Ralph,\\\" Ralph and Vanellope, now friends, discover a wi-fi router in their arcade, leading them into a new adventure.', '2018-11-20'),
 (2, 'Spider-Man: Into the Spider-Verse', 'https://image.tmdb.org/t/p/w600_and_h900_bestv2\\/laMM4lpQSh5z6KIBPwWogkjzBVQ.jpg', 'Miles Morales is juggling his life between being a high school student and being Spider-Man. However, when Wilson \\\"Kingpin\\\" Fisk uses a super collider, another Spider-Man from another dimension, Pet', '2018-12-07');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbuser`
+--
+
+CREATE TABLE `tbuser` (
+  `iduser` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbuser`
+--
+
+INSERT INTO `tbuser` (`iduser`, `username`, `password`) VALUES
+(1, 'admin', 'admin');
+
 --
 -- Indexes for dumped tables
 --
@@ -114,6 +133,12 @@ ALTER TABLE `tbmovie`
   ADD PRIMARY KEY (`id_movie`);
 
 --
+-- Indexes for table `tbuser`
+--
+ALTER TABLE `tbuser`
+  ADD PRIMARY KEY (`iduser`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -122,6 +147,12 @@ ALTER TABLE `tbmovie`
 --
 ALTER TABLE `tbmovie`
   MODIFY `id_movie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tbuser`
+--
+ALTER TABLE `tbuser`
+  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
