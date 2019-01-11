@@ -2,7 +2,7 @@
 include 'koneksi.php';
 $json['Result'] = array();
 
-$sql = "SELECT * FROM mytable";
+$sql = "SELECT * FROM tbmovie";
 $result = mysqli_query($koneksi_db,$sql);
 while($row = mysqli_fetch_assoc($result)){
     $array = $row;

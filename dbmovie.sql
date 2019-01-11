@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2019 at 04:29 AM
+-- Generation Time: Jan 10, 2019 at 04:58 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -25,10 +25,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mytable`
+-- Table structure for table `movie_table`
 --
 
-CREATE TABLE `mytable` (
+CREATE TABLE `movie_table` (
   `vote_count` int(11) NOT NULL,
   `id` int(11) NOT NULL,
   `video` varchar(5) NOT NULL,
@@ -50,10 +50,10 @@ CREATE TABLE `mytable` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mytable`
+-- Dumping data for table `movie_table`
 --
 
-INSERT INTO `mytable` (`vote_count`, `id`, `video`, `vote_average`, `title`, `popularity`, `poster_path`, `original_language`, `original_title`, `genre_ids0`, `genre_ids1`, `genre_ids2`, `backdrop_path`, `adult`, `overview`, `release_date`, `genre_ids3`, `genre_ids4`) VALUES
+INSERT INTO `movie_table` (`vote_count`, `id`, `video`, `vote_average`, `title`, `popularity`, `poster_path`, `original_language`, `original_title`, `genre_ids0`, `genre_ids1`, `genre_ids2`, `backdrop_path`, `adult`, `overview`, `release_date`, `genre_ids3`, `genre_ids4`) VALUES
 (6, 166428, 'false', '8.7', 'How to Train Your Dragon: The Hidden World', '44.190', '/ZPZdFP2qo0cvfNTrUUNRXTW9AB.jpg', 'en', 'How to Train Your Dragon: The Hidden World', 16, 10751, 12, '/lqROGEZ7NvUX08dAzUSJQcy8m74.jpg', 'false', 'As Hiccup fulfills his dream of creating a peaceful dragon utopia, Toothless’ discovery of an untamed, elusive mate draws the Night Fury away.  When danger mounts at home and Hiccup’s reign as village chief is tested, both dragon and rider must make impossible decisions to save their kind.', '2019-01-03', NULL, NULL),
 (12, 505954, 'false', '5.5', 'T-34', '121.448', '/wNJF8R5QE6nBT7DQoKk8t6YD1MM.jpg', 'ru', '?-34', 10752, 18, 12, '/vDx8XxfYjkn573bCFGF6SkdM33Q.jpg', 'false', '1941 - WWii. the second lieutenant Nikolai ivushkin, commander of a t-34, engages in an unequal battle against the tank ace Klaus Jager in a battle near moscow. His mission is more of a suicide - to destroy a dozen german tanks, all by himself. that said, luck does favour the bold. He wins the battle, barely survives, but loses his tank and lands himself in captivity for three long years... there was little to no chance for ivushkin and Jager to meet again, but the war knows how to throw a curve ball.in the spring of 1944, the Wehrmacht commands Jager to take charge of the ohrdruf  re range and turn it into a training center for elite german armored forces, using the latest t-34 as a running target. this is how Jager and ivushkin cross paths again. Jager o ers ivushkin to become the commander of a legendary tank and pick his crew from fellow camp prisoners. Nothing goes according to plan, though, when ivushkin uses exercises for a daring and carefully planned escape.', '2018-12-27', NULL, NULL),
 (22, 460071, 'false', '5.2', 'Lizzie', '32.159', '/z2iuBcwznen3kC9z4LeOzBSz1BB.jpg', 'en', 'Lizzie', 80, 18, 53, '/uq2ELjEQM02GhWJY75MQHgaiCJB.jpg', 'false', 'Massachusetts, 1892. An unmarried woman of 32 and a social outcast, Lizzie lives a claustrophobic life under her father\'s cold and domineering control. When Bridget Sullivan, a young maid, comes to work for the family, Lizzie finds a sympathetic, kindred spirit, and a secret intimacy soon blossoms into a wicked plan.', '2018-09-14', NULL, NULL),
@@ -95,7 +95,8 @@ CREATE TABLE `tbmovie` (
 
 INSERT INTO `tbmovie` (`id_movie`, `title`, `poster_path`, `overview`, `release_date`) VALUES
 (1, 'Ralph Breaks the Internet', 'https://image.tmdb.org/t/p/w600_and_h900_bestv2\\/m110vLaDDOCca4hfOcS5mK5cDke.jpg', 'Six years after the events of \\\"Wreck-It Ralph,\\\" Ralph and Vanellope, now friends, discover a wi-fi router in their arcade, leading them into a new adventure.', '2018-11-20'),
-(2, 'Spider-Man: Into the Spider-Verse', 'https://image.tmdb.org/t/p/w600_and_h900_bestv2\\/laMM4lpQSh5z6KIBPwWogkjzBVQ.jpg', 'Miles Morales is juggling his life between being a high school student and being Spider-Man. However, when Wilson \\\"Kingpin\\\" Fisk uses a super collider, another Spider-Man from another dimension, Pet', '2018-12-07');
+(2, 'Spider-Man: Into the Spider-Verse', 'https://image.tmdb.org/t/p/w600_and_h900_bestv2\\/laMM4lpQSh5z6KIBPwWogkjzBVQ.jpg', 'Miles Morales is juggling his life between being a high school student and being Spider-Man. However, when Wilson \\\"Kingpin\\\" Fisk uses a super collider, another Spider-Man from another dimension, Pet', '2018-12-07'),
+(3, 'The Mule', 'https://image.tmdb.org/t/p/w600_and_h900_bestv2\\/t0idiLMalKMj2pLsvqHrOM4LPdQ.jpg', 'A 90-year-old horticulturalist and Korean War veteran is caught transporting $3 million worth of cocaine through Illinois for a Mexican drug cartel.', '2018-12-14');
 
 -- --------------------------------------------------------
 
@@ -121,9 +122,9 @@ INSERT INTO `tbuser` (`iduser`, `username`, `password`) VALUES
 --
 
 --
--- Indexes for table `mytable`
+-- Indexes for table `movie_table`
 --
-ALTER TABLE `mytable`
+ALTER TABLE `movie_table`
   ADD PRIMARY KEY (`vote_count`);
 
 --
@@ -146,7 +147,7 @@ ALTER TABLE `tbuser`
 -- AUTO_INCREMENT for table `tbmovie`
 --
 ALTER TABLE `tbmovie`
-  MODIFY `id_movie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_movie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbuser`
